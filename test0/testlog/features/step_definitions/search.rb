@@ -1,7 +1,7 @@
 
-require 'rspec'
-#require 'watir-webdriver'
-require "selenium-webdriver"
+#require 'rspec'
+##require 'watir-webdriver'
+#require "selenium-webdriver"
 
 =begin
 SITE = "www.google.com"
@@ -18,16 +18,16 @@ Given /^A webpage$/ do
     BROWSER.goto("http://www.google.com/")
 =end
 
-    driver = Selenium::WebDriver.for :firefox
-    driver.navigate.to "http://google.com"
+    #driver = Selenium::WebDriver.for :firefox
+    $driver.navigate.to "http://google.com"
 
-    element = driver.find_element(:name, 'q')
+    element = $driver.find_element(:name, 'q')
     element.send_keys "Hello WebDriver!"
     element.submit
 
-    puts driver.title
+    puts $driver.title
 
-    driver.quit
+    $driver.quit
 
 end
 
